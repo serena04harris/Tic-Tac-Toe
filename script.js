@@ -29,9 +29,4 @@ function resetGame() {
   board = ["", "", "", "", "", "", "", "", ""];
   currentPlayer = "X";
   isGameOver = false;
-  document.getElementById("status").innerText = "Player X's turn";
-  const cells = document.getElementsByClassName("cell");
-  for (let cell of cells) {
-    cell.innerText = "";
-  }
-}
+  document.getElementById("status").innerText = "Player
