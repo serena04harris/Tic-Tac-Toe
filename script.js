@@ -3,7 +3,6 @@ let currentPlayer = "X";
 let isGameOver = false;
 
 function makeMove(cell, index) {
-  console.log('Player 1 is making a move');
   if (board[index] === "" && !isGameOver) {
     board[index] = currentPlayer;
     cell.innerText = currentPlayer;
@@ -14,7 +13,6 @@ function makeMove(cell, index) {
 }
 
   for (let combo of winningCombinations) {
-    console.log('checking for winner...');
     const [a, b, c] = combo;
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
       document.getElementById("status").innerText = `Player ${board[a]} wins!`;
@@ -25,8 +23,12 @@ function makeMove(cell, index) {
 
 
 function resetGame() {
-  console.log('Resetting the game...' );
   board = ["", "", "", "", "", "", "", "", ""];
   currentPlayer = "X";
   isGameOver = false;
-  document.getElementById("status").innerText = "Player
+  document.getElementById("status").innerText = "Player X's turn";
+  const cells = document.getElementsByClassName("cell");
+  for (let cell of cells) {
+    cell.innerText = "";
+  }
+}
